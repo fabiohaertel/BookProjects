@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scale From Zero</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Scale from zero to millions of users</h1>
+    <p>System Design Interview, Chapter 1. Each section below adds one scaling step.</p>
+  </header>
+
+  <main class="main-container">
+    <section class="child-container" id="cc1" aria-labelledby="cc1-title">
+      <div class="cc-header">
+        <h2 id="cc1-title"><span class="cc-tag">CC1</span> Single server setup</h2>
+        <p>Everything runs on one server: web app, database and cache. DNS is a third-party service.</p>
+      </div>
+
+      <div class="cc-body">
+        <div class="diagram diagram-cc1">
+          <canvas aria-hidden="true"></canvas>
+          <div class="node node-browser" data-node="browser">
+            <span class="node-label">Container A</span>
+            <strong>User Browser</strong>
+            <small>www.mysite.com</small>
+          </div>
+          <div class="node node-dns" data-node="dns">
+            <span class="node-label">Container B</span>
+            <strong>DNS Server</strong>
+            <small>third-party</small>
+          </div>
+          <div class="node node-web" data-node="web">
+            <span class="node-label">Container C</span>
+            <strong>Web Server</strong>
+            <small>15.125.23.214</small>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <div class="controls">
+            <button type="button" data-action="run" class="primary">Simulate request</button>
+            <button type="button" data-action="next">Next step</button>
+            <button type="button" data-action="reset">Reset</button>
+          </div>
+          <ol class="steps" aria-live="polite"></ol>
+          <pre class="response" aria-live="polite"></pre>
+        </aside>
+      </div>
+    </section>
+    <section class="child-container" id="cc2" aria-labelledby="cc2-title">
+      <div class="cc-header">
+        <h2 id="cc2-title"><span class="cc-tag">CC2</span> Database</h2>
+        <p>The web tier and the data tier run on separate servers, so each one can scale independently.</p>
+      </div>
+
+      <div class="cc-body">
+        <div class="diagram diagram-cc2">
+          <canvas aria-hidden="true"></canvas>
+          <div class="node node-browser" data-node="browser">
+            <span class="node-label">Container A</span>
+            <strong>User Browser</strong>
+            <small>www.mysite.com</small>
+          </div>
+          <div class="node node-dns" data-node="dns">
+            <span class="node-label">Container B</span>
+            <strong>DNS Server</strong>
+            <small>third-party</small>
+          </div>
+          <div class="node node-web" data-node="web">
+            <span class="node-label">Container C</span>
+            <strong>Web Server</strong>
+            <small>web tier</small>
+          </div>
+          <div class="node node-db" data-node="db">
+            <span class="node-label">Container D</span>
+            <strong>Database Server</strong>
+            <small>data tier</small>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <div class="controls">
+            <button type="button" data-action="run" class="primary">Simulate request</button>
+            <button type="button" data-action="next">Next step</button>
+            <button type="button" data-action="reset">Reset</button>
+          </div>
+          <ol class="steps" aria-live="polite"></ol>
+          <pre class="response" aria-live="polite"></pre>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
