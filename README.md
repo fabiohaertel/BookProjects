@@ -1,8 +1,7 @@
 # Purpose
 
-This repository contains a collection of projects based on different tech books. The goal is to build
-different projects to practice AI and System Design concepts. Some of the projects may not necessarily
-contain code. Diagrams are also valid.
+This repository contains a collection of projects inspired by various tech books. The goal is to build
+different projects to practice AI and System Design concepts. Some projects may not involve writing code at all; diagrams and other visual artifacts are also valid.
 
 ## Book 1: System Design Interview - An Insider's Guide - by Alex Xu
 
